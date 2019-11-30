@@ -6,7 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  title = 'タスク登録';
+  tasks: { name: string }[] = [
+    { name: 'タスク１' },
+    { name: 'タスク2' },
+  ];
+  task: string;
+  constructor() { }
 
-  constructor() {}
+  addTask() {
+    this.tasks.push({
+      name: this.task
+    });
+    this.task = '';
+  }
 
 }
