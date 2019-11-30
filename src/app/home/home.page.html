@@ -4,26 +4,19 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
       {{title}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form class="ion-padding">
+  <form class="ion-padding" (submit)="addTask()">
     <ion-item lines="full" class="ion-padding-bottom">
       <ion-label position="floating">タスク</ion-label>
       <ion-input type="text" [(ngModel)]="task" name="task"></ion-input>
     </ion-item>
-    <ion-button expand="block">追加</ion-button>
+    <ion-button expand="block" type="submit">追加</ion-button>
     <ion-list>
-      <ion-item>
-        <ion-label>タスク1</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>タスク２</ion-label>
-      </ion-item>
       <ion-item *ngFor="let t of tasks">
         <ion-label>{{t.name}}</ion-label>
       </ion-item>
